@@ -14,10 +14,10 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: chmod 777 ./gradlew && ./gradlew :app:assembleDebug && find app/build/outputs && ls -l app/build/outputs/apk/common/debug/
+      run: chmod 777 ./gradlew && ./gradlew :inrt:assembleDebug && find inrt/build/outputs
     - name: Upload apk
       uses: actions/upload-artifact@v1
       with:
         name: autojs-debug
-        path: app/build/outputs/apk/common/debug/
+        path: inrt/build/outputs/
 
